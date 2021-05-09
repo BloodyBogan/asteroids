@@ -1,0 +1,51 @@
+.b-mobile-controls {
+	@include margin('top', 400);
+	width: 100%;
+
+	@include mq {
+		@include margin('top', 400, 'sm');
+
+		&__row {
+			& + & {
+				@include margin('top', 200, 'sm');
+			}
+		}
+	}
+
+	&__row {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+
+		& + & {
+			@include margin('top', 200);
+		}
+	}
+
+	.mobile-control {
+		$size: 6.4rem;
+		@include border;
+		background-color: $clr-dark-900;
+		box-shadow: $box-shadow;
+		height: $size;
+		line-height: 1;
+		user-select: none;
+
+		width: $size;
+
+		&:hover,
+		&:focus {
+			background-color: lighten($clr-dark-900, 8);
+			box-shadow: 0 0 0 0 darken($clr-light-100, 50);
+			transform: translate($box-shadow-offset, $box-shadow-offset);
+		}
+
+		&.right {
+			margin-left: $size / 2;
+		}
+
+		&.shoot {
+			margin-right: $size / 2;
+		}
+	}
+}

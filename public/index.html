@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+        <meta name="description" content="JavaScript rendition of the classic arcade game Asteroids." />
+        <meta name="author" content="Michal Kaštan" />
+
+        <title>Asteroids</title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+        <script>
+            (function () {
+                var loadingScreen = document.createElement('div');
+                loadingScreen.classList.add('b-loading-screen');
+
+                var loadingScreenText = document.createElement('p');
+                loadingScreenText.classList.add('b-loading-screen__text');
+                loadingScreenText.textContent = 'Loading...';
+
+                loadingScreen.appendChild(loadingScreenText);
+
+                window.loadingScreen = loadingScreen;
+
+                document.onreadystatechange = function () {
+                    if (document.readyState === 'interactive') {
+                        document.body.appendChild(window.loadingScreen);
+                    }
+                };
+            })();
+        </script>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap&display=swap"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap&display=swap"
+            media="print"
+            onload="this.media='all'"
+        />
+        <noscript>
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap&display=swap"
+            />
+        </noscript>
+
+        <link rel="stylesheet" href="/build/bundle.css" />
+
+        <script src="/build/bundle.js"></script>
+    </head>
+    <body>
+        <noscript>Please enable JavaScript to play Asteroids 🚀</noscript>
+    </body>
+</html>

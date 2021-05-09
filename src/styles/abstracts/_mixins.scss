@@ -1,0 +1,72 @@
+@mixin mq() {
+	@media only screen and (max-width: $breakpoint-small) {
+		@content;
+	}
+}
+
+@mixin margin($direction, $size, $type: 'lg') {
+	@if $direction == 'all' {
+		margin: get($margin, $type, $size);
+	} @else if $direction == 'vertical' {
+		margin-top: get($margin, $type, $size);
+		margin-bottom: get($margin, $type, $size);
+	} @else if $direction == 'horizontal' {
+		margin-left: get($margin, $type, $size);
+		margin-right: get($margin, $type, $size);
+	} @else {
+		margin-#{$direction}: get($margin, $type, $size);
+	}
+}
+
+@mixin padding($direction, $size, $type: 'lg') {
+	@if $direction == 'all' {
+		padding: get($padding, $type, $size);
+	} @else if $direction == 'vertical' {
+		padding-top: get($padding, $type, $size);
+		padding-bottom: get($padding, $type, $size);
+	} @else if $direction == 'horizontal' {
+		padding-left: get($padding, $type, $size);
+		padding-right: get($padding, $type, $size);
+	} @else {
+		padding-#{$direction}: get($padding, $type, $size);
+	}
+}
+
+@mixin flex-column {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@mixin flex-row() {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+@mixin font-size($size) {
+	font-size: get($font-sizes, 'lg', $size);
+
+	@include mq {
+		font-size: get($font-sizes, 'sm', $size);
+	}
+}
+
+@mixin border {
+	border: 0.125em solid $clr-light-100;
+}
+
+@mixin cover($type: 'a') {
+	@if $type == 'f' {
+		position: fixed;
+	} @else {
+		position: absolute;
+	}
+	height: 100%;
+	left: 0;
+
+	top: 0;
+	width: 100%;
+}

@@ -1,0 +1,15 @@
+.l-container {
+	$s: &;
+
+	@include margin('vertical', 600);
+	text-align: center;
+
+	@include mq {
+		@include margin('vertical', 600, 'sm');
+	}
+
+	&#{$s}--play {
+		max-width: $max-width;
+		width: 100%;
+	}
+}

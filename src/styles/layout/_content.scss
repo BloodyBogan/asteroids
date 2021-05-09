@@ -1,0 +1,90 @@
+.l-content {
+
+	@include mq {
+		&__title {
+			@include margin('bottom', 600, 'sm');
+		}
+
+		&__subtitle {
+			@include padding('vertical', 400, 'sm');
+			@include padding('horizontal', 600, 'sm');
+		}
+
+		&__subtitle + &__container {
+			@include margin('top', 300, 'sm');
+		}
+
+		&__container {
+			& + & {
+				@include margin('top', 300, 'sm');
+			}
+
+			li {
+				@include padding('vertical', 200, 'sm');
+				@include padding('horizontal', 400, 'sm');
+			}
+
+			li + li {
+				@include margin('top', 100, 'sm');
+			}
+
+			> .c-checkbox + .c-checkbox,
+			> .c-btn + .c-btn {
+				@include margin('top', 100, 'sm');
+			}
+		}
+
+		> .c-btn {
+			@include margin('top', 800, 'sm');
+		}
+	}
+
+	&__title {
+		$s: &;
+
+		@include margin('bottom', 600);
+		hyphens: auto;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+
+		&#{$s}--rotated {
+			transform: rotate($rotate-angle);
+		}
+	}
+
+	&__subtitle {
+		@include padding('vertical', 400);
+		@include padding('horizontal', 600);
+		@include border;
+	}
+
+	&__subtitle + &__container {
+		@include margin('top', 300);
+	}
+
+	&__container {
+		@include flex-column;
+
+		& + & {
+			@include margin('top', 300);
+		}
+
+		li {
+			@include padding('vertical', 200);
+			@include padding('horizontal', 400);
+		}
+
+		li + li {
+			@include margin('top', 100);
+		}
+
+		> .c-checkbox + .c-checkbox,
+		> .c-btn + .c-btn {
+			@include margin('top', 100);
+		}
+	}
+
+	> .c-btn {
+		@include margin('top', 800);
+	}
+}

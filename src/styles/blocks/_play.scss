@@ -1,0 +1,46 @@
+.b-play {
+	position: relative;
+	width: 100%;
+
+	@include mq {
+		&__hud {
+			@include padding('vertical', 200, 'sm');
+			@include padding('horizontal', 400, 'sm');
+		}
+	}
+
+	&__hud {
+		@include padding('vertical', 200);
+		@include padding('horizontal', 400);
+		align-items: center;
+		background-color: rgba($clr-dark-900, 24%);
+		display: flex;
+		justify-content: space-between;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 1000;
+
+		&-score,
+		&-pause {
+			color: darken($clr-light-100, 16);
+			user-select: none;
+		}
+
+		&-pause {
+			&:focus {
+				outline: $outline-width solid darken($clr-light-100, 16);
+			}
+		}
+	}
+
+	&__canvas {
+		height: 0;
+		padding-top: 100%;
+
+		> canvas {
+			@include cover;
+		}
+	}
+}

@@ -1,0 +1,67 @@
+.b-help {
+
+	@include mq {
+		&__title {
+			@include margin('bottom', 600, 'sm');
+		}
+
+		&__keys {
+			@include padding('all', 200, 'sm');
+
+			li {
+				@include margin('vertical', 200, 'sm');
+				@include margin('horizontal', 300, 'sm');
+
+				kbd {
+					@include margin('top', 200, 'sm');
+					@include padding('vertical', 400, 'sm');
+					@include padding('horizontal', 400, 'sm');
+				}
+			}
+		}
+
+		.c-btn {
+			@include margin('top', 800, 'sm');
+		}
+	}
+
+	&__title {
+		$s: &;
+
+		@include margin('bottom', 600);
+		hyphens: auto;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+
+		&#{$s}--rotated {
+			transform: rotate($rotate-angle);
+		}
+	}
+
+	&__keys {
+		@include flex-row;
+		@include padding('all', 200);
+		@include border;
+		max-width: $max-width;
+		width: 100%;
+
+		li {
+			@include flex-column;
+			@include margin('vertical', 200);
+			@include margin('horizontal', 300);
+
+			kbd {
+				@include margin('top', 200);
+				@include padding('vertical', 400);
+				@include padding('horizontal', 400);
+				@include border;
+				box-shadow: $box-shadow;
+				line-height: 1;
+			}
+		}
+	}
+
+	.c-btn {
+		@include margin('top', 800);
+	}
+}

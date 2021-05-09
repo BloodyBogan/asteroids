@@ -1,0 +1,76 @@
+.c-checkbox {
+	$s: &;
+
+	@include padding('vertical', 200);
+	@include padding('horizontal', 400);
+	cursor: pointer;
+
+	@include mq {
+		@include padding('vertical', 200, 'sm');
+		@include padding('horizontal', 400, 'sm');
+
+		&__label {
+			@include margin('left', 200, 'sm');
+		}
+	}
+
+	&:hover {
+		#{$s}__container {
+			&-control {
+				&::before {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&:focus {
+		outline: $outline-width solid $clr-light-100;
+	}
+
+	&__container {
+		$s: &;
+
+		display: inline-block;
+		height: 1em;
+		position: relative;
+		width: 1em;
+
+		> * {
+			@include cover;
+			display: block;
+		}
+
+		&-input {
+			opacity: 0;
+
+			&:checked + #{$s}-control {
+				&::before {
+					display: block;
+				}
+			}
+		}
+
+		&-control {
+			@include border;
+
+			&::before {
+				$size: 56%;
+				background-color: $clr-light-100;
+
+				content: '';
+				display: none;
+				height: $size;
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				width: $size;
+			}
+		}
+	}
+
+	&__label {
+		@include margin('left', 200);
+	}
+}

@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+
+:root {
+	color: $clr-light-100;
+	font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+	font-size: 62.5%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+html,
+body {
+	min-height: 100vh;
+}
+
+body {
+	@include flex-column;
+	background: $clr-dark-900;
+	font-size: 1.6em;
+	height: 100%;
+	margin: 0;
+	padding: 0% 4%;
+	text-align: center;
+}
+
+a {
+	@include padding('all', 200);
+	color: $clr-light-100;
+	display: inline-block;
+	text-decoration: none;
+
+	@include mq {
+		@include padding('all', 200, 'sm');
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $clr-light-100;
+		color: $clr-dark-900;
+		outline: none;
+		transform: scale(1.02) rotate($rotate-angle);
+	}
+}
+
+@media only screen and (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transform: none !important;
+		transition-property: none !important;
+	}
+}

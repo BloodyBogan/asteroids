@@ -1,0 +1,12 @@
+.l-footer {
+	@include margin('top', 900);
+	width: 100%;
+
+	@include mq {
+		@include margin('top', 900, 'sm');
+	}
+
+	&__credits {
+		text-align: center;
+	}
+}

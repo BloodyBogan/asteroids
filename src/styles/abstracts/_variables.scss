@@ -1,0 +1,14 @@
+$clr-light-100: hsl(0, 11%, 93%);
+
+$clr-dark-900: hsl(276, 12%, 8%);
+
+$rotate-angle: -2deg;
+
+$outline-width: 0.125em;
+
+$box-shadow-offset: 0.125em;
+$box-shadow: $box-shadow-offset $box-shadow-offset 0 0 darken($clr-light-100, 50);
+
+$max-width: 64rem;
+
+$breakpoint-small: 33.75em;

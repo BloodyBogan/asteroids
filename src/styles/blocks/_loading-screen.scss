@@ -1,0 +1,21 @@
+.b-loading-screen {
+	@include cover('f');
+	@include flex-column;
+	background-color: $clr-dark-900;
+	z-index: 2000;
+
+	&__text {
+		@include font-size(600);
+		animation: pulse 1.5s ease-in-out 0s infinite alternate forwards;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}

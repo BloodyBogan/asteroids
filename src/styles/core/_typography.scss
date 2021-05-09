@@ -1,0 +1,41 @@
+h1 {
+	@include font-size(700);
+	line-height: 1.266;
+
+	@include mq {
+		line-height: 1.206;
+	}
+}
+
+button,
+input,
+kbd {
+	font: inherit;
+}
+
+a,
+p,
+li,
+button,
+label,
+kbd {
+	@include font-size(400);
+
+	@include mq {
+		line-height: 1.714;
+	}
+}
+
+small {
+	@include font-size(300);
+	line-height: 1.333;
+
+	@include mq {
+		line-height: 1.523;
+	}
+
+	* {
+		font-size: inherit;
+		line-height: inherit;
+	}
+}

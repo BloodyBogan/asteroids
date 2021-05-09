@@ -1,0 +1,31 @@
+.c-btn {
+	@include padding('vertical', 200);
+	@include padding('horizontal', 400);
+	position: relative;
+
+	@include mq {
+		@include padding('vertical', 200, 'sm');
+		@include padding('horizontal', 400, 'sm');
+	}
+
+	&::before {
+		content: '>';
+		display: none;
+		font-size: inherit;
+		left: -1.5em;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+
+		@include mq {
+			left: -1em;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		&::before {
+			display: block;
+		}
+	}
+}
